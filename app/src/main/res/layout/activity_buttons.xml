@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.graphics.drawable.Drawable"/>
+        <import type="androidx.databinding.ObservableBoolean" />
+        <variable name="isButton1Present" type="Boolean" />
+        <variable name="isButton2Present" type="Boolean" />
+        <variable name="isButton3Present" type="Boolean" />
+        <variable name="isButton1Enabled" type="ObservableBoolean" />
+        <variable name="isButton2Enabled" type="ObservableBoolean" />
+        <variable name="isButton3Enabled" type="ObservableBoolean" />
+        <variable name="button1Icon" type="Drawable" />
+        <variable name="button2Icon" type="Drawable" />
+        <variable name="button3Icon" type="Drawable" />
+    </data>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:context=".settings.ButtonsActivity">
+        <requestFocus/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/settings_padding"
+            android:orientation="vertical">
+            <Switch
+                android:id="@+id/b1_s"
+                android:text="@string/settings_button_1"
+                android:enabled="@{isButton1Present}"
+                android:drawableStart="@{button1Icon}"
+                style="@style/SettingsSwitchTitle"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/b1_i"
+                    android:text="@string/settings_button_increment"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton1Present &amp;&amp; isButton1Enabled}"
+                    style="@style/SettingsRadioButton"/>
+                <RadioButton
+                    android:id="@+id/b1_d"
+                    android:text="@string/settings_button_decrement"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton1Present &amp;&amp; isButton1Enabled}"
+                    style="@style/SettingsRadioButton"/>
+                <RadioButton
+                    android:id="@+id/b1_r"
+                    android:text="@string/settings_button_reset"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton1Present &amp;&amp; isButton1Enabled}"
+                    style="@style/SettingsRadioButton"/>
+            </RadioGroup>
+            <Switch
+                android:id="@+id/b2_s"
+                android:text="@string/settings_button_2"
+                android:enabled="@{isButton2Present}"
+                android:drawableStart="@{button2Icon}"
+                style="@style/SettingsSwitchTitle"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/b2_i"
+                    android:text="@string/settings_button_increment"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton2Present &amp;&amp; isButton2Enabled}"
+                    style="@style/SettingsRadioButton"/>
+                <RadioButton
+                    android:id="@+id/b2_d"
+                    android:text="@string/settings_button_decrement"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton2Present &amp;&amp; isButton2Enabled}"
+                    style="@style/SettingsRadioButton"/>
+                <RadioButton
+                    android:id="@+id/b2_r"
+                    android:text="@string/settings_button_reset"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton2Present &amp;&amp; isButton2Enabled}"
+                    style="@style/SettingsRadioButton"/>
+            </RadioGroup>
+            <Switch
+                android:id="@+id/b3_s"
+                android:text="@string/settings_button_3"
+                android:enabled="@{isButton3Present}"
+                android:drawableStart="@{button3Icon}"
+                style="@style/SettingsSwitchTitle"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/b3_i"
+                    android:text="@string/settings_button_increment"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton3Present &amp;&amp; isButton3Enabled}"
+                    style="@style/SettingsRadioButton"/>
+                <RadioButton
+                    android:id="@+id/b3_d"
+                    android:text="@string/settings_button_decrement"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton3Present &amp;&amp; isButton3Enabled}"
+                    style="@style/SettingsRadioButton"/>
+                <RadioButton
+                    android:id="@+id/b3_r"
+                    android:text="@string/settings_button_reset"
+                    android:onClick="onClick"
+                    android:enabled="@{isButton3Present &amp;&amp; isButton3Enabled}"
+                    style="@style/SettingsRadioButton"/>
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+</layout>

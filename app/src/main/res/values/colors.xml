@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="button_color_1">?android:textColorPrimary</color>
+    <color name="button_color_2">?android:textColorSecondary</color>
+    <color name="button_color_3">#BB86FC</color>
+</resources>

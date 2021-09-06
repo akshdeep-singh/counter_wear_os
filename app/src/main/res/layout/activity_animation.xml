@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".settings.AnimationActivity">
+    <requestFocus/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/settings_padding"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/settings_animation"
+            style="@style/SettingsTitle"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/anim_o"
+                android:text="@string/settings_animation_off"
+                android:onClick="onClick"
+                style="@style/SettingsRadioButton"/>
+            <RadioButton
+                android:id="@+id/anim_f"
+                android:text="@string/settings_animation_fade"
+                android:onClick="onClick"
+                style="@style/SettingsRadioButton"/>
+            <RadioButton
+                android:id="@+id/anim_s"
+                android:text="@string/settings_animation_slide"
+                android:onClick="onClick"
+                style="@style/SettingsRadioButton"/>
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -13,9 +14,17 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
+    kapt "com.android.databinding:compiler:3.1.4"
     implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.wear:wear:1.0.0'
+    implementation "androidx.wear:wear-input:1.0.0"
     implementation 'com.google.android.gms:play-services-wearable:17.1.0'
 }

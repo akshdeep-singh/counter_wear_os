@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="androidx.databinding.ObservableBoolean" />
+        <variable name="isEnabled" type="ObservableBoolean" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:context=".settings.CounterCycleActivity">
+        <requestFocus/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/settings_padding"
+            android:orientation="vertical">
+            <TextView
+                android:text="@string/settings_counter_cycle"
+                style="@style/SettingsTitle"/>
+
+            <Switch
+                android:id="@+id/cc_e"
+                style="@style/SettingsSwitch"
+                android:text="@string/settings_counter_cycle_enabled" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/settings_counter_cycle_length"
+                    android:enabled="@{isEnabled}"
+                    style="@style/SettingsText"/>
+                <EditText
+                    android:id="@+id/cc_l"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="32dp"
+                    android:gravity="end"
+                    android:inputType="number"
+                    android:digits="0123456789"
+                    android:maxLength="6"
+                    android:enabled="@{isEnabled}"
+                    tools:text="10"/>
+            </LinearLayout>
+            <Switch
+                android:id="@+id/cc_v"
+                android:text="@string/settings_counter_cycle_vibrate"
+                android:enabled="@{isEnabled}"
+                style="@style/SettingsSwitch"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>

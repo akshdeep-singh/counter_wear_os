@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".settings.TextSizeActivity">
+    <requestFocus/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/settings_padding"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/settings_text_size"
+            style="@style/SettingsTitle"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/ts_s"
+                android:text="@string/settings_text_size_small"
+                android:onClick="onClick"
+                style="@style/SettingsRadioButton"/>
+            <RadioButton
+                android:id="@+id/ts_m"
+                android:text="@string/settings_text_size_medium"
+                android:onClick="onClick"
+                style="@style/SettingsRadioButton"/>
+            <RadioButton
+                android:id="@+id/ts_l"
+                android:text="@string/settings_text_size_large"
+                android:onClick="onClick"
+                style="@style/SettingsRadioButton"/>
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

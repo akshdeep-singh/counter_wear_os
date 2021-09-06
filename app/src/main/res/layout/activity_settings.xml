@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".settings.SettingsActivity">
+    <requestFocus/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/settings_padding"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/settings"
+            style="@style/SettingsTitle"/>
+        <TextView
+            android:text="@string/settings_text_size"
+            android:onClick="onClickTextSize"
+            android:drawableStart="@drawable/text_size"
+            style="@style/SettingsText"/>
+        <!-- TextView TODO
+            android:text="@string/settings_animation"
+            android:onClick="onClickAnimation"
+            android:drawableStart="@drawable/animation"
+            style="@style/SettingsText"/-->
+        <TextView
+            android:text="@string/settings_counter_cycle"
+            android:onClick="onClickCounterCycle"
+            android:drawableStart="@drawable/cycle"
+            style="@style/SettingsText"/>
+        <TextView
+            android:text="@string/settings_buttons"
+            android:onClick="onClickButtons"
+            android:drawableStart="@drawable/buttons"
+            style="@style/SettingsText"/>
+    </LinearLayout>
+</ScrollView>
