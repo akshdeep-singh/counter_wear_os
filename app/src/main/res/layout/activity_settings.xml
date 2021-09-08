@@ -35,5 +35,10 @@
             android:onClick="onClickButtons"
             android:drawableStart="@drawable/buttons"
             style="@style/SettingsText"/>
+        <TextView
+            android:text="@string/settings_always_on"
+            android:onClick="onClickAlwaysOn"
+            android:drawableStart="@drawable/watch"
+            style="@style/SettingsText"/>
     </LinearLayout>
 </ScrollView>

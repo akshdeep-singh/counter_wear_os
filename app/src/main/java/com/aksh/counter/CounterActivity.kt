@@ -1,6 +1,5 @@
 package com.aksh.counter
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -11,13 +10,16 @@ import android.view.KeyEvent
 import android.view.View
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableInt
+import androidx.fragment.app.FragmentActivity
+import androidx.wear.ambient.AmbientModeSupport
 
 import com.aksh.counter.settings.Settings.CounterAction
 import com.aksh.counter.databinding.ActivityCounterBinding
 import com.aksh.counter.settings.Settings
 import com.aksh.counter.settings.SettingsActivity
 
-class CounterActivity: Activity() {
+class CounterActivity: FragmentActivity(), AmbientModeSupport.AmbientCallbackProvider {
+    private lateinit var ambientController: AmbientModeSupport.AmbientController
     private lateinit var vibrator: Vibrator
     private lateinit var binding: ActivityCounterBinding
     private lateinit var settings: Settings
@@ -26,6 +28,7 @@ class CounterActivity: Activity() {
     private lateinit var animation: ObservableInt
     private lateinit var textSize: ObservableInt
 
+    private val isAmbientMode = ObservableBoolean(false)
     private val counter = ObservableInt()
     private val _counter: Int get() = counter.get()
 
@@ -45,6 +48,11 @@ class CounterActivity: Activity() {
                 _counter
     }
 
+    override fun getAmbientCallback() = object : AmbientModeSupport.AmbientCallback() {
+        override fun onEnterAmbient(ambientDetails: Bundle?) = isAmbientMode.set(true)
+        override fun onExitAmbient() = isAmbientMode.set(false)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -56,9 +64,14 @@ class CounterActivity: Activity() {
         animation = ObservableInt(settings.counterAnimation)
         textSize = ObservableInt(settings.counterTextSize)
 
+        if (settings.isCounterAlwaysOnEnabled) {
+            ambientController = AmbientModeSupport.attach(this)
+        }
+
         binding = ActivityCounterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.isAmbientMode = isAmbientMode
         binding.isAnimationEnabled = isAnimationEnabled
         binding.isCycleEnabled = isCycleEnabled
         binding.cycle = cycleCounts

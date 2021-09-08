@@ -13,6 +13,7 @@ class SettingsActivity: Activity() {
         setContentView(R.layout.activity_settings)
     }
 
+    fun View.onClickAlwaysOn()     = startActivity(AlwaysOnActivity::class.java)
     fun View.onClickAnimation()    = startActivity(AnimationActivity::class.java)
     fun View.onClickButtons()      = startActivity(ButtonsActivity::class.java)
     fun View.onClickCounterCycle() = startActivity(CounterCycleActivity::class.java)
