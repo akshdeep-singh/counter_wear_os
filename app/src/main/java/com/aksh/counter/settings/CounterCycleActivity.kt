@@ -25,16 +25,19 @@ class CounterCycleActivity: Activity(), CompoundButton.OnCheckedChangeListener {
         binding.isEnabled = isEnabled
         binding.ccE.isChecked = settings.isCounterCycleEnabled
         binding.ccV.isChecked = settings.isCounterCycleVibrateEnabled
-        binding.ccL.setText(settings.counterCycleLength.toString())
+        binding.ccL.hint = settings.counterCycleLength.toString()
 
         binding.ccE.setOnCheckedChangeListener(this)
         binding.ccV.setOnCheckedChangeListener(this)
 
         binding.ccL.setOnEditorActionListener { textView, actionId, _ ->
-            // TODO check for empty input
-            // TODO check working different keyboards
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-                settings.counterCycleLength = textView.text.toString().toInt()
+                textView.text.toString().also {
+                    if (it.isNotEmpty()) {
+                        settings.counterCycleLength = it.toInt()
+                        textView.hint = it
+                    }
+                }
             }
 
             false
