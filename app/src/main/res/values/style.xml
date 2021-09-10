@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="SettingsTitle" parent="android:Widget.TextView">
+    <style name="CounterText" parent="android:Widget.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:gravity">center</item>
-        <item name="android:padding">8dp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:fontFamily">monospace</item>
     </style>
     <style name="SettingsText" parent="android:Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingVertical">8dp</item>
-        <item name="android:paddingHorizontal">32dp</item>
-        <item name="android:drawablePadding">8dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:paddingHorizontal">@dimen/settings_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/settings_padding_vertical</item>
+        <item name="android:drawablePadding">@dimen/settings_padding_drawable</item>
+        <item name="android:textSize">@dimen/settings_text_size</item>
         <item name="android:textColor">?android:textColorPrimary</item>
         <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+    <style name="SettingsTitle" parent="SettingsText">
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/settings_text_size_title</item>
     </style>
     <style name="SettingsRadioButton" parent="android:Widget.DeviceDefault.CompoundButton.RadioButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginHorizontal">32dp</item>
-        <item name="android:padding">8dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginHorizontal">@dimen/settings_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/settings_padding_vertical</item>
+        <item name="android:textSize">@dimen/settings_text_size</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="SettingsSwitch" parent="Widget.Wear.RoundSwitch">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingVertical">8dp</item>
-        <item name="android:paddingHorizontal">32dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:paddingHorizontal">@dimen/settings_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/settings_padding_vertical</item>
+        <item name="android:textSize">@dimen/settings_text_size</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="SettingsSwitchTitle" parent="SettingsSwitch">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:drawablePadding">8dp</item>
+        <item name="android:drawablePadding">@dimen/settings_padding_drawable</item>
         <item name="android:drawableTint">@color/button_color_3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/settings_text_size_title</item>
     </style>
 </resources>

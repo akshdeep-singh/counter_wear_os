@@ -14,17 +14,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/settings_padding"
+            android:paddingVertical="@dimen/settings_padding_outer"
             android:orientation="vertical">
             <TextView
                 android:text="@string/settings_counter_cycle"
                 style="@style/SettingsTitle"/>
-
             <Switch
                 android:id="@+id/cc_e"
                 style="@style/SettingsSwitch"
                 android:text="@string/settings_counter_cycle_enabled" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +39,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginEnd="@dimen/settings_padding_horizontal"
                     android:gravity="end"
                     android:inputType="number"
                     android:digits="0123456789"

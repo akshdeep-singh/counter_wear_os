@@ -4,5 +4,10 @@
     <dimen name="button_size_1">36dp</dimen>
     <dimen name="button_size_2">24dp</dimen>
 
-    <dimen name="settings_padding">20dp</dimen>
+    <dimen name="settings_padding_outer">24dp</dimen>
+    <dimen name="settings_padding_horizontal">32dp</dimen>
+    <dimen name="settings_padding_vertical">8dp</dimen>
+    <dimen name="settings_padding_drawable">8dp</dimen>
+    <dimen name="settings_text_size">16sp</dimen>
+    <dimen name="settings_text_size_title">20sp</dimen>
 </resources>

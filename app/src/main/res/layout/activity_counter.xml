@@ -29,28 +29,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="4dp"
                 android:visibility="@{isCycleEnabled ? View.VISIBLE : View.GONE}"
-                android:fontFamily="monospace"
                 android:textStyle="normal"
                 android:textColor="?android:textColorSecondary"
                 android:textSize="@{textSize}"
                 android:text="@{String.valueOf(cycle)}"
-                tools:textSize="32sp"
-                tools:text="cycle" />
+                tools:text="cycle"
+                style="@style/CounterText"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="4dp"
-                android:fontFamily="monospace"
                 android:textStyle="bold"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="@{textSize}"
                 android:text="@{String.valueOf(counter)}"
-                tools:textSize="32sp"
-                tools:text="counter"/>
+                tools:text="counter"
+                style="@style/CounterText"/>
         </LinearLayout>
         <ImageButton
             android:layout_width="@dimen/button_size"
